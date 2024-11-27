@@ -1,24 +1,18 @@
-import { Button, Grid, Paper, TextField, IconButton, InputAdornment, Box } from "@mui/material";
+import { Button, Grid, Paper, TextField, IconButton, InputAdornment } from "@mui/material";
 import { useState } from "react";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import '../../assets/fonts/poppins.css';
-import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Register() {
   const [Email, setEmail] = useState('');
   const [Password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
-  const navigate = useNavigate();
 
   const handlelogin = () => {
     console.log(Email, "Its Email");
-    console.log(Password, "Its Password");    
+    console.log(Password, "Its Password");
   };
-
-  const handleRegister = () =>{
-    navigate('/register');
-  }
 
   const handleTogglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -99,7 +93,6 @@ function Login() {
             }
           }}
         />
-        <Box>
         <Button
           onClick={handlelogin}
           sx={{
@@ -113,27 +106,11 @@ function Login() {
             }
           }}
         >
-          Login
+          Register now
         </Button>
-        <Button
-          onClick={handleRegister}
-          sx={{
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "transparent",
-            fontFamily: "poppins",
-            width: "10vw",
-            "&:hover": {
-              color: "red"
-            }
-          }}
-        >
-          Register
-        </Button>
-        </Box>
       </Paper>
     </Grid>
   );
 }
 
-export default Login;
+export default Register;
